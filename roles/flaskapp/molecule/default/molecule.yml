@@ -5,8 +5,12 @@ driver:
   name: docker
 platforms:
   - name: instance
-    image: debian:bullseye
+    image: geerlingguy/docker-debian11-ansible
     pre_build_image: true
+    command: ${MOLECULE_DOCKER_COMMAND:-""}
+    volumes:
+     - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    privileged: true
 provisioner:
   name: ansible
 verifier:
