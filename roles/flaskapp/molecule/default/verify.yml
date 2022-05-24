@@ -8,3 +8,17 @@
   - name: Example assertion
     assert:
       that: true
+  - name: Check the default app is running
+    uri:
+      headers:
+        Host: hello.test
+      url: http://localhost/
+      return_content: yes
+    register: app_return
+  - name: debug default app return
+    debug:
+      var: app_return
+  - name: Assert default app return
+    assert:
+      that:
+        - "'<h1>Hello from helloworld on server instance!</h1>' in app_return.content"
