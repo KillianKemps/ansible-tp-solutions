@@ -1,0 +1,7 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: "Include flaskapp"
+      include_role:
+        name: "flaskapp"
