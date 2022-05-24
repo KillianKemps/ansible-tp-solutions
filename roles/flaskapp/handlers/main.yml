@@ -2,3 +2,9 @@
   systemd:
     name: nginx
     state: reloaded
+
+- name: start systemd app service
+  systemd:
+    name: "{{ template_out.dest | basename }}"
+    state: restarted
+    enabled: yes
