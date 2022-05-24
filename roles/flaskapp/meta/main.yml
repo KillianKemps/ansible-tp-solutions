@@ -2,7 +2,7 @@
 dependencies: []
 
 galaxy_info:
-  author: <name>
+  author: author_example
   description: Install multiple instances of flask apps on linux with nginx
   license: "license (BSD, MIT)"
   min_ansible_version: 2.8
